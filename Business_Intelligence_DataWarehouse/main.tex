@@ -1,0 +1,193 @@
+\documentclass[11pt,letterpaper]{article}
+
+% Codificación e idioma
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+
+% Fuente Fourier (Utopia)
+\usepackage{fourier}
+
+% Fuente sans serif TeX Gyre Heros (solo para el encabezado)
+\usepackage{tgheros}
+
+% Márgenes de 2 cm
+\usepackage[letterpaper,margin=2cm,headheight=14pt]{geometry}
+
+% Encabezado y pie de página
+\usepackage{fancyhdr}
+
+% Textos del encabezado (se pueden cambiar en cualquier parte del documento)
+\newcommand{\textoizquierdo}{Business Intelligence and Data Warehouse}
+\newcommand{\textoderecho}{Module 1 - Introduction to Business Intelligence as an Analytical System}
+
+% Uso en el documento:
+%   \encabezadoizq{Nuevo texto}   -> cambia el texto de la izquierda
+%   \encabezadoder{Module 2}     -> cambia el texto de la derecha
+% El cambio aplica a la página donde se escribe; usa \clearpage antes
+% si quieres que empiece en una página nueva.
+\newcommand{\encabezadoizq}[1]{\renewcommand{\textoizquierdo}{#1}}
+\newcommand{\encabezadoder}[1]{\renewcommand{\textoderecho}{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\sffamily \textoizquierdo}
+\fancyhead[R]{\footnotesize\sffamily\bfseries \textoderecho}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Plantilla para estilos de encabezado completos (descomentar y adaptar):
+% \fancypagestyle{otroestilo}{%
+%   \fancyhf{}
+%   \fancyhead[L]{\footnotesize\sffamily Texto izquierdo}
+%   \fancyhead[R]{\footnotesize\sffamily\bfseries Texto derecho}
+%   \fancyfoot[C]{\thepage}}
+% Activar con \pagestyle{otroestilo} o, para una sola página, \thispagestyle{otroestilo}.
+\setlength{\parindent}{0pt}
+ 
+\begin{document}
+
+\section*{Introducción}
+ 
+Este contenido introduce los conceptos fundamentales de Business Intelligence (BI) y su relación con los sistemas de data warehousing para apoyar la toma de decisiones empresariales.
+
+\section{Introducción a Business Intelligence}
+BI es una infraestructura tecnológica que mejora los procesos de negocio mediante 
+la recopilación, integración, análisis y compartición de datos. Los sistemas comunes 
+de BI incluyen sistemas de información ejecutiva, soporte a decisiones, procesamiento 
+analítico en línea (OLAP) y gestión de relaciones con clientes. 
+\section{Componentes y proceso de desarrollo de un sistema BI} 
+El desarrollo comienza con la comprensión del negocio, 
+seguido por la selección de fuentes de datos relevantes y el modelado multidimensional
+(como esquemas estrella y copo de nieve). La integración de datos se realiza
+mediante procesos ETL (extracción, transformación y carga), que abordan
+problemas de calidad de datos. 
+\section{Análisis y presentación de datos} 
+El análisis básico se realiza con consultas SQL y OLAP para análisis descriptivo, mientras
+que técnicas avanzadas incluyen minería de datos y análisis predictivo. La
+información resultante debe presentarse de forma clara para facilitar la toma de
+decisiones empresariales. 
+\section{¿Cómo se analizan los datos?} 
+Visualización de datos
+\begin{itemize}
+	\item Existen diversas formas de visualizar datos, como mapas digitales
+(estáticos o animados), tablas, gráficos, realidad virtual y dashboards.
+\end{itemize}
+
+
+\begin{itemize}
+	\item Estas visualizaciones permiten que los usuarios comprendan fácilmente
+los resultados del análisis.
+\end{itemize}
+Componentes de Business Intelligence
+
+\begin{itemize}
+	\item Un sistema de soporte a decisiones involucra datos y modelos para ayudar
+en la toma de decisiones.
+\end{itemize}
+
+
+\begin{itemize}
+	\item Business Intelligence implica adquirir datos de múltiples fuentes,
+consolidarlos en un data warehouse, analizarlos y presentar resultados visuales
+para la toma de decisiones.
+\end{itemize}
+Técnicas de análisis de datos
+
+\begin{itemize}
+	\item El análisis descriptivo se realiza con consultas complejas y
+multidimensionales, como consultas secuenciales y hojas de cálculo.
+\end{itemize}
+
+
+\begin{itemize}
+	\item Técnicas más avanzadas como data mining permiten análisis predictivos y
+prescriptivos, que serán detallados posteriormente.
+\end{itemize}
+Un data warehouse es un sistema de almacenamiento centralizado donde se
+consolidan, integran y organizan datos provenientes de diversas fuentes. Su
+función en Business Intelligence es: Reunir datos de diferentes sistemas para
+tener una visión unificada. Facilitar el análisis mediante la estructuración y
+limpieza de datos. Servir como base para realizar consultas, análisis
+descriptivos, predictivos y prescriptivos. Apoyar la toma de decisiones al
+proporcionar datos confiables y accesibles para visualizaciones y reportes.
+
+El \textbf{modelado multidimensional} en Business Intelligence es una técnica
+para organizar los datos en estructuras que facilitan el análisis desde
+diferentes perspectivas o dimensiones.  \\ \\
+Características clave:
+
+\begin{itemize}
+	\item Los datos se organizan en hechos (medidas cuantitativas, como ventas) y
+dimensiones (categorías para analizar, como tiempo, ubicación, producto).
+\end{itemize}
+
+
+\begin{itemize}
+	\item Permite realizar consultas complejas y análisis rápidos, como total de
+ventas por ciudad o por período.
+\end{itemize}
+
+
+\begin{itemize}
+	\item Facilita la creación de esquemas como Star Schema o Snowflake Schema,
+que son modelos comunes en data warehouses.
+\end{itemize}
+Este modelado ayuda a que los usuarios puedan explorar y entender los datos de
+forma intuitiva para tomar decisiones. 
+\newpage
+\encabezadoder{Module 2 - Design of a Data Warehouse}
+\section{Diseñár e implementar una base de datos analítica}
+Esta lección se centra en el diseño e implementación de una base de datos analítica 
+para inteligencia de negocios, destacando el modelado multidimensional y la transición 
+de sistemas transaccionales a sistemas OLAP. \\
+
+\textbf{Estrategias de diseño de Data Warehouse}
+	\begin{itemize}
+		\item Existen dos enfoques principales: el de Inmon (top-down), que define un data warehouse corporativo primero, y el de Kimball (bottom-up), que construye data marts para necesidades específicas. 
+	\end{itemize}
+    
+	\begin{itemize}
+		\item El diseño se basa en un modelo multidimensional que incluye dimensiones, atributos, jerarquías y hechos o métricas.
+	\end{itemize} 
+    
+
+\textbf{Componentes del modelo multidimensional}
+	\begin{itemize}
+		\item Las dimensiones representan áreas temáticas o líneas de negocio y contienen atributos organizados en jerarquías para facilitar el análisis. 
+	\end{itemize}
+
+	\begin{itemize}
+		\item Los hechos son medidas o métricas que cuantifican el comportamiento del negocio y se almacenan en tablas centrales.
+	\end{itemize}
+    
+    
+
+\textbf{Proceso de modelado multidimensional}
+	\begin{itemize}
+		\item Primero se define un modelo de datos integrado para la empresa.
+	\end{itemize}
+    
+	\begin{itemize}
+		\item Luego se delimita el alcance del data warehouse, identificando qué partes del negocio y usuarios serán cubiertos.
+    \end{itemize}
+
+	\begin{itemize}
+		\item Finalmente, se produce el modelo multidimensional que servirá de base para el esquema del data warehouse, permitiendo análisis detallados y agregados según diferentes dimensiones.
+	\end{itemize}
+
+\section{Pasos para el modelo multidimensional OLTP}
+Hay 7 pasos:
+
+\begin{enumerate}
+	\item Definir dimensiones o las formas de analizar la información.
+	\item Identificar los atributos de cada dimensión.
+	\item Organizar jerárquicamente los atributos dentro de cada dimensión.
+	\item Asignar identificadores únicos a los atributos.
+	\item Asignar campos descriptivos en los atributos.
+	\item Identificar los hechos y crear una tabla de hechos.
+	\item Asignar identificadores únicos en la tabla de hechos.
+\end{enumerate}
+
+\end{document}
